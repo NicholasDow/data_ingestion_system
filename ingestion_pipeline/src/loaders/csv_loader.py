@@ -23,8 +23,8 @@ class CSVLoader(Loader):
                     csv_reader = csv.DictReader(f)
                     for i, row in enumerate(csv_reader):
                         # Assume 'title' and 'text' columns exist, otherwise use empty strings
-                        title = row.get('title', '')
-                        text = row.get('text', '')
+                        title = row.get(title, '')
+                        text = row.get(text, '')
 
                         # If 'title' or 'text' don't exist, we might want to create a text
                         # representation of the entire row

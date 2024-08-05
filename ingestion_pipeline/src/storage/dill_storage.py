@@ -5,6 +5,7 @@ from ingestion_pipeline.src.storage.base import DataStorage
 
 
 class DillDataStorage(DataStorage):
+    extension = 'dill'
     def save(self, data: Any, file_path: str) -> None:
         """Save data to a file using dill."""
         with open(file_path, 'wb') as f:
