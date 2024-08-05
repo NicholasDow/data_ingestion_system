@@ -30,7 +30,7 @@ class Pipeline:
 
 
     @log_operation
-    def process(self, input_folder: str, name: str, title: str = 'title', text: str = 'text') -> None:
+    def process(self, input_folder: str, name: str, overwrite: bool, title: str = 'title', text: str = 'text') -> None:
         input_path = self.input_home / input_folder
         if not input_path.exists():
             raise FileNotFoundError(f"Input folder {input_path} does not exist in input_home.")
@@ -48,7 +48,7 @@ class Pipeline:
         dataset = Dataset(name, '', documents)
 
         # Check if dataset already exists and remove if it does
-        if self.dataset_exists(name):
+        if self.dataset_exists(name) and overwrite:
             self.remove_existing_dataset(name)
             print(f"Removed existing dataset: {name}")
 
