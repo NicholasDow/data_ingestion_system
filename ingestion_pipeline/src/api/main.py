@@ -5,7 +5,7 @@ from typing import Dict, Any
 from ..streaming.data_stream import DataStream
 from ..core.pipeline import Pipeline
 from ..loaders.json_loader import JSONLoader
-from ..chunkers.simple_chunker import SimpleChunker
+from ..chunkers.paragraph_chunker import ParagraphChunker
 from ..embedders.dummy_embedder import DummyEmbedder
 
 app = FastAPI()
@@ -13,7 +13,7 @@ app = FastAPI()
 # Initialize components
 data_stream = DataStream()
 loader = JSONLoader()
-chunker = SimpleChunker()
+chunker = ParagraphChunker()
 embedder = DummyEmbedder()
 pipeline = Pipeline(loader, chunker, embedder)
 

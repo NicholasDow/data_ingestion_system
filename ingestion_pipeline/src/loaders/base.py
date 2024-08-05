@@ -5,5 +5,5 @@ from ..core.document import Document
 
 class Loader(ABC):
     @abstractmethod
-    def load(self, file_path: str) -> List[Document]:
+    def load(self, file_path: str, title: str, text: str) -> List[Document]:
         pass
