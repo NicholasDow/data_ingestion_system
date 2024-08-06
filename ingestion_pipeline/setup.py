@@ -7,12 +7,11 @@ setup(
     license='GPLv3',
     package_dir={"": "src"},
     install_requires=[
-        "fastapi",
-        "uvicorn",
-        "aiohttp",
-        "pyarrow",
-        "pandas",
-        "torch"
+        # "fastapi",
+        # "aiohttp",
+        # "pyarrow",
+        # "pandas",
+        # "torch"
     ],
     author="Nicholas Dow",
     author_email="nickmingdow@gmail.com",
